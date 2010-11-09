@@ -150,6 +150,10 @@ Geolocation.prototype.fail = function(id, code, msg) {
     catch (e) {
         console.log("Geolocation Error: Error calling error callback function.");
     }
+
+    if (id == "global") {
+        delete navigator._geo.listeners["global"];
+    }
 };
 
 /**
